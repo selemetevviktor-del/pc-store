@@ -1,6 +1,5 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
-import Header from '../components/Header.jsx';
 import ProductList from '../components/ProductList.jsx';
 import { getProductsMock } from '../mocks/products.js';
 
@@ -65,8 +64,6 @@ export default function HomePage() {
   return (
     <div id="top">
       
-
-      <Header />
 
       <main className="container">
         <section className="hero">

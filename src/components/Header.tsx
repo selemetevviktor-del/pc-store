@@ -1,18 +1,45 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+
 export default function Header() {
   return (
     <header className="site-header">
       <div className="container nav-row">
-        <a className="logo" href="#top" aria-label="Вольт ПК — главная"><span>PC</span> Store</a>
+        <Link className="logo" to="/">
+          <span>PC</span> Store
+        </Link>
+
         <nav aria-label="Основная навигация">
-          <a href="#">Главная</a>
-          <a href="#">Игровые</a>
-          <a href="#">Экслюзивные</a>
-          <a href="#">Конфигуратор</a>
-          <a href="#">Комплектующие</a>
+          <NavLink to="/" end>
+            Главная
+          </NavLink>
+
+          <NavLink to="/gaming">
+            Игровые
+          </NavLink>
+
+          <NavLink to="/exclusive">
+            Эксклюзивные
+          </NavLink>
+
+          <NavLink to="/configurator">
+            Конфигуратор
+          </NavLink>
+
+          <NavLink to="/components">
+            Комплектующие
+          </NavLink>
         </nav>
-        <a className="header-cta" href="#">Корзина</a>
-        <a className="header-cta" href="#">Войти</a>
+
+        <div className="header-actions">
+          <NavLink className="header-cta" to="/cart">
+            Корзина
+          </NavLink>
+
+          <NavLink className="header-cta" to="/login">
+            Войти
+          </NavLink>
+        </div>
       </div>
     </header>
   );
